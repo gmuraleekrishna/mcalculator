@@ -1,9 +1,9 @@
 describe("A suite", function() {
-  
+
   it("contains function to answer all the questions", function() {
     expect(superSmartFunction()).toBe(42);
   });
-  
+
   it("contains h1 element with text", function() {
     loadFixtures("html_fixtures.html");
     expect($("h1").text()).toBe("Test");
