@@ -1,7 +1,24 @@
-function superSmartFunction() {
-    return 42;
-}
+var App = App || {};
 
-function ajaxRequest() {
-    $.get("https://api.github.com/repos/zigomir/rubber_ring/events");
-}
+(function() {
+
+  App.superSmartFunction = function() {
+    return 42;
+  },
+
+  // callback as parameter, because otherwise it would be harder to test
+  App.ajaxRequest = function(callback) {
+    $.ajax({
+      type:    "GET",
+      url:     "/resource",
+      success: callback
+    });
+  }
+
+  App.changeText = function() {
+    App.ajaxRequest(function(response) {
+      $("span").text(response);
+    });
+  }
+
+})();
