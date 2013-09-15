@@ -1,8 +1,8 @@
 var App = App || {};
 
 $(function() {
-  App.clickCallback = function(selector) {
-    $(selector).text("Clicked");
+  App.clickCallback = function(selector, text) {
+    $(selector).text(text);
   };
 
   App.superSmartFunction = function() {

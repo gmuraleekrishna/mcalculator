@@ -12,7 +12,7 @@ describe("A suite", function() {
   it("will change header text", function() {
     var $header = $("h1");
     expect($header.text()).toBe("Test");
-    App.clickCallback("h1");
+    App.clickCallback("h1", "Clicked");
     expect($header.text()).toBe("Clicked");
   });
 
