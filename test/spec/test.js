@@ -9,8 +9,11 @@ describe("A suite", function() {
     expect(App.superSmartFunction()).toBe(42);
   });
 
-  it("contains h1 element with text", function() {
-    expect($("h1").text()).toBe("Test");
+  it("will change header text", function() {
+    var $header = $("h1");
+    expect($header.text()).toBe("Test");
+    App.clickCallback("h1");
+    expect($header.text()).toBe("Clicked");
   });
 
   it("supports spying on ajax requests", function() {

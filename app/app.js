@@ -1,10 +1,13 @@
 var App = App || {};
 
-(function() {
+$(function() {
+  App.clickCallback = function(selector) {
+    $(selector).text("Clicked");
+  };
 
   App.superSmartFunction = function() {
     return 42;
-  },
+  };
 
   // callback as parameter, because otherwise it would be harder to test
   App.ajaxRequest = function(callback) {
@@ -13,12 +16,11 @@ var App = App || {};
       url:     "/resource",
       success: callback
     });
-  }
+  };
 
   App.changeText = function() {
     App.ajaxRequest(function(response) {
       $("span").text(response);
     });
-  }
-
-})();
+  };
+});

@@ -1,34 +1,35 @@
 module.exports = function(config) {
   config.set({
-    // base path, that will be used to resolve files and exclude
+    // base path, that will be used to resolve files
+    // if you set it to current dir like here, all your other paths can just be relative to it
     basePath: ".",
 
     frameworks: ["jasmine"],
 
     // list of files / patterns to load in the browser
     files: [
-      // html fixtures
+      // serve html fixtures
       { pattern: "test/fixtures/*.html", watched: true, served: true, included: false },
 
-      // application scripts
+      // dependencies
       "app/lib/jquery.min.js",
 
-      // fixtures code
+      // test helper code
       "test/helpers/jasmine-jquery.js",
+
+      // set jasmine fixtures path
+      // includes only this line: jasmine.getFixtures().fixturesPath = "base/test/fixtures/";
       "test/helpers/fixtures.js",
 
-      // application code
+      // code you want to test
       "app/app.js",
 
-      // application tests
+      // test code
       "test/spec/*.js"
     ],
 
     // list of files to exclude
-    exclude: [
-
-    ],
-
+    exclude: [],
     preprocessors: {"*/.html": [] },
 
     // test results reporter to use
@@ -57,6 +58,7 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: ["PhantomJS"],
+//    browsers: ["Chrome"],
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 20000,
@@ -68,6 +70,7 @@ module.exports = function(config) {
     plugins: [
       "karma-jasmine",
       "karma-phantomjs-launcher"
+//      "karma-chrome-launcher"
     ]
   });
 };
