@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+   <link href="../css/calculator.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="calculator-continer">
+          <div id="calculator">
+            <div id="row">
+              <h1>Calculator</h1>   
+              <form role="form">
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control" id="operand1" placeholder="Operand 1">
+                  <label for="operand1" id="help_operand1"></label>
+                </div>
+                <div class="form-group col-md-1">
+                  <input type="text" class="form-control" id="operator" placeholder="(+,-,/,%,^)">
+                  <label for="operator" id="help_operator"></label>
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control" id="operand2" placeholder="Operand 2">
+                  <label for="operand2" id="help_operand2"></label>
+                </div>
+                
+                <div id="equalTo" class="col-md-1 text-center"><span>=</span></div>
+                <div class="form-group col-md-3">
+                  <input type="text"  class="form-control" id="result" placeholder="Result" disabled>
+                </div>
+                </form>
+		<button  class="btn btn-primary" onclick="validateAllFields()">Calculate</button>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="view.js"></script>
+    <script src="calculator.js"></script>
+  </body>
+</html>

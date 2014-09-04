@@ -31,7 +31,7 @@ module.exports = function(config) {
       // code you want to test
       "app/calculator.js",
 
-      "app/main.js",
+      "app/view.js",
 
       "app/validate.js",
 

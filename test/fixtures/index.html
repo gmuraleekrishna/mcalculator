@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="calculator-continer">
+        <div id="calculator">
+          <div id="row">
+            <h1>Calculator</h1>   
+            <form role="form">
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="operand1" onblur="validateField(this, document.getElementById('help_operand1'))" placeholder="Operand 1">
+                <label for="operand1" id="help_operand1"></label>
+              </div>
+              <div class="form-group col-md-1">
+                <input type="text" class="form-control" id="operator" onblur="validateOperator(this, document.getElementById('help_operator'))" placeholder="(+,-,/,%,^)">
+                <label for="operator" id="help_operator"></label>
+              </div>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="operand2" onblur="validateField(this, document.getElementById('help_operand2'))" placeholder="Operand 2">
+                <label for="operand2" id="help_operand2"></label>
+              </div>
+              
+              <div id="equalTo" class="col-md-1 text-center"><span>=</span></div>
+              <div class="form-group col-md-3">
+                <input type="text"  class="form-control" id="result" placeholder="Result" disabled>
+              </div>
+            </form>
+	    <button  class="btn btn-primary" onclick="calculate()" id="calculate-btn" type="button">Calculate</button>	
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
